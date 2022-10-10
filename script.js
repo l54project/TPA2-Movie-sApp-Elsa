@@ -1,3 +1,4 @@
+// data movies
 const movies = [
   {
     id: 985939,
@@ -576,14 +577,16 @@ const movies = [
   },
 ];
 
+// search
 let searchValue = "";
 
 function searchMovie() {
   setTimeout(() => {
     search();
-  }, 100);
+  }, 100); //100 adalah lama loading waktu pencarian
 }
 
+//proses search
 function search() {
   const inputElement = document.getElementById("search");
   searchValue = inputElement.value || "";
@@ -597,6 +600,7 @@ function search() {
     notFound.classList.add("d-none");
   }
 
+  // menampilkan list movies
   let showMovies = "";
   for (let i = 0; i < dataMovies.length; i++) {
     const movie = dataMovies[i];
@@ -621,24 +625,3 @@ function search() {
 
 search();
 
-
-
-// function searchMovies(keyword =''){
-//   const searchValue = String(keyword).toUpperCase().trim()
-//   return searchValue
-// }
-
-// function getMovies (keyword =''){
-//   let filteringmovies = movies.filter((element) => {
-//     const movieTitle = String(element.title).toUpperCase().trim()
-//     return movieTitle.includes(searchMovies(keyword))
-//   })
-//   if (filteringmovies.length>0){
-//     return filteringmovies
-//   }else{
-//     return movies
-//   }
-// }
-
-// console.log(getMovies('Fall'))
-// console.log(getMovies('          Groot Takes a Bath         '))
